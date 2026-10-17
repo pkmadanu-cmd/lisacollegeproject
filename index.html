@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>M Lisa | B.Tech ECE Project</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f7fc;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            min-height: 82px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 5%;
+            box-shadow: 0 3px 20px rgba(15, 23, 42, 0.08);
+            border-bottom: 3px solid #2563eb;
+            gap: 20px;
+        }
+
+        /* LEFT SIDE: PROJECT NAME */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            flex-shrink: 0;
+        }
+
+        .brand-text h1 {
+            font-size: 21px;
+            font-weight: 800;
+            color: #172554;
+            line-height: 1.5;
+        }
+
+        .brand-text p {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* RIGHT SIDE: LOGOUT */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .academic-year {
+            color: #475569;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 11px 19px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(239, 68, 68, 0.25);
+        }
+
+        /* MAIN WELCOME SECTION */
+        .main-content {
+            max-width: 1200px;
+            margin: 55px auto;
+            padding: 0 25px;
+        }
+
+        .welcome-card {
+            background: linear-gradient(135deg, #1d4ed8, #6d28d9);
+            color: white;
+            border-radius: 20px;
+            padding: 55px 45px;
+            box-shadow: 0 12px 35px rgba(37, 99, 235, 0.18);
+        }
+
+        .welcome-card .tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.16);
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            margin-bottom: 22px;
+        }
+
+        .welcome-card h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .welcome-card p {
+            max-width: 700px;
+            line-height: 1.9;
+            color: #e0e7ff;
+            font-size: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 28px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 5px 18px rgba(15, 23, 42, 0.04);
+        }
+
+        .info-card i {
+            color: #2563eb;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .info-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #64748b;
+            font-size: 12px;
+            margin-top: 40px;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 700px) {
+            .navbar {
+                padding: 15px 4%;
+                gap: 12px;
+            }
+
+            .brand {
+                gap: 9px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                border-radius: 10px;
+            }
+
+            .brand-text h1 {
+                font-size: 15px;
+            }
+
+            .brand-text p {
+                font-size: 10px;
+            }
+
+            .academic-year {
+                display: none;
+            }
+
+            .logout-btn {
+                padding: 10px 12px;
+                font-size: 12px;
+                gap: 6px;
+            }
+
+            .main-content {
+                margin: 30px auto;
+                padding: 0 15px;
+            }
+
+            .welcome-card {
+                padding: 35px 23px;
+            }
+
+            .welcome-card h2 {
+                font-size: 25px;
+            }
+
+            .welcome-card p {
+                font-size: 13px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand-text h1 {
+                font-size: 13px;
+            }
+
+            .brand-text p {
+                font-size: 9px;
+            }
+
+            .logout-btn {
+                padding: 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP NAVBAR -->
+    <header class="navbar">
+
+        <!-- LEFT: PROJECT NAME -->
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+
+            <div class="brand-text">
+                <h1>M Lisa</h1>
+                <p>B.Tech ECE | 2nd Year | 2026–2027</p>
+            </div>
+        </div>
+
+        <!-- RIGHT: ACADEMIC YEAR AND LOGOUT -->
+        <div class="nav-right">
+            <span class="academic-year">
+                <i class="fa-regular fa-calendar"></i>
+                Academic Year 2026–2027
+            </span>
+
+            <button class="logout-btn" onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+        </div>
+
+    </header>
+
+    <!-- MAIN PAGE -->
+    <main class="main-content">
+
+        <section class="welcome-card">
+            <span class="tag">
+                <i class="fa-solid fa-graduation-cap"></i>
+                B.Tech ECE College Project
+            </span>
+
+            <h2>Welcome to M Lisa's Project</h2>
+
+            <p>
+                Welcome to the project dashboard for B.Tech Electronics
+                and Communication Engineering, Second Year, Academic
+                Year 2026–2027. Your project workspace is ready for
+                the next stage of development.
+            </p>
+        </section>
+
+        <!-- PROJECT INFORMATION CARDS -->
+        <section class="info-grid">
+
+            <div class="info-card">
+                <i class="fa-solid fa-microchip"></i>
+                <h3>ECE Project</h3>
+                <p>
+                    A workspace for your Electronics and Communication
+                    Engineering college project.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Academic Details</h3>
+                <p>
+                    B.Tech ECE, Second Year, Academic Session 2026–2027.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Project Workspace</h3>
+                <p>
+                    Your main page can be extended with project modules,
+                    features, reports and other tools.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2026–2027 M Lisa | B.Tech ECE 2nd Year
+        <br>
+        College Project
+    </footer>
+
+    <script>
+        function logout() {
+            const confirmLogout = confirm(
+                "Are you sure you want to log out?"
+            );
+
+            if (confirmLogout) {
+                // Redirect to your login page.
+                // Create login.html or change this path
+                // to match your existing login page.
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+
+</body>
+</html>
